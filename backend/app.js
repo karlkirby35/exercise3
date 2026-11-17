@@ -43,7 +43,7 @@ if (!usingS3) {
 // A load balancer requests this to check that the app is running. Anything
 // other than a 200 response counts as unhealthy.
 app.get("/health", (req, res) => {
-  res.send("ok");
+  res.status(500).send("broken");
 });
 
 app.get("/api/notes", async (req, res) => {
